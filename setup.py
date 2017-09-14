@@ -5,7 +5,7 @@ except ImportError:
 
 __author__ = "Apache PredictionIO"
 __email__ = "user@predictionio.incubator.apache.org"
-__copyright__ = "Copyright 2014, TappingStone, Inc."
+__copyright__ = "Copyright 2017 The Apache Software Foundation"
 __license__ = "Apache License, Version 2.0"
 
 setup(
