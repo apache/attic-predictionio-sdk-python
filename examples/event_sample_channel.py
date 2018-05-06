@@ -1,5 +1,7 @@
 # this is example of import events to a specific channel of an App
 
+from __future__ import print_function
+
 from predictionio import EventClient
 from predictionio import NotFoundError
 from datetime import datetime
@@ -40,7 +42,7 @@ first_event_response = client.create_event(
     )
 print("First Event response")
 print(first_event_response)
-print
+print()
 
 # Second event
 second_event_properties = {
@@ -57,7 +59,7 @@ second_event_response = client.create_event(
     event_time=datetime(2014, 12, 13, 21, 38, 45, 618000, pytz.utc))
 print("Second Event response")
 print(second_event_response)
-print
+print()
 
 
 # Get the first event from Event Server
@@ -65,18 +67,18 @@ first_event_id = first_event_response.json_body["eventId"]
 print("Get Event")
 event = client.get_event(first_event_id)
 print(event)
-print
+print()
 
 # Delete the first event from Event Server
 print("Delete Event")
 delete_response = client.delete_event(first_event_id)
 print(delete_response)
-print
+print()
 
 # Delete the first event from Event Server again should yield exception.
 print("Delete Event Again")
 try:
   delete_response = client.delete_event(first_event_id)
-except NotFoundError, ex:
+except NotFoundError as ex:
   print("The expected error: {0}".format(ex))
-print
+print()
